@@ -1,0 +1,27 @@
+{
+  "name": "webenclave",
+  "version": "1.0.0",
+  "description": "",
+  "main": "WebEnclave.js",
+  "dependencies": {
+    "browserify": "^16.5.0",
+    "gulp": "^4.0.2",
+    "gulp-bro": "^2.0.0",
+    "gulp-csso": "^4.0.1",
+    "gulp-html-minify": "0.0.14",
+    "gulp-html-replace": "^1.6.2",
+    "gulp-minify-html": "^1.0.6",
+    "gulp-rename": "^2.0.0",
+    "gulp-uglify-es": "^2.0.0",
+    "through2": "^3.0.1",
+    "uglifyify": "^5.0.2",
+    "vinyl-buffer": "^1.0.1",
+    "vinyl-source-stream": "^2.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

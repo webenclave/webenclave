@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+    <web-enclave>
+        <div>
+            <h2>Jquery Test</h2>
+            <p>Add final to another script. It will run after all other scripts finished.</p>
+            <br /><br />
+        </div>
+        <script src="jquery-3.5.1.min.js"></script>
+        <script extend final>
+
+            //only run inside Enclave
+            if (window['$we']) {
+                $('h2').append("Some appended text.");
+            }
+
+            //only run without Enclave
+            if (!document.documentElement.getAttribute('WebEnclave') && !window['$we']) {
+                $('h2').append("Some appended text.");
+            }
+
+
+        </script>
+    </web-enclave>
+
+</body>
+</html>

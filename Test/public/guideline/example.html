@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+    <web-enclave>
+        <div>
+            <div id="loginDiv">
+                Username : <input id="user" /><br />
+                Password : <input id="psw" type="password" /><br />
+                <button onclick="login();">Login</button>
+            </div>
+        </div>
+        <style>
+            #loginDiv{
+                padding:10px;
+                width:250px;
+                border:1px solid red;
+                line-height:40px;
+            }
+        </style>
+        <script src="jquery-3.5.1.min.js"></script>
+        <script extend final>
+
+            function login() {
+                //your login logic here
+            }
+
+            if (window['$we']) {
+                //only run with WebEnclave installed
+            }
+
+            if (!document.documentElement.getAttribute('WebEnclave') && !window['$we']) {
+                //only run without WebEnclave installed
+            }
+
+        </script>
+    </web-enclave>
+
+</body>
+</html>

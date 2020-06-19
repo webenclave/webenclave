@@ -1,0 +1,15 @@
+html {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    padding: 0px;
+    margin: 0px;
+}
+
+#wrapFrame {
+    padding: 0px;
+    margin: 0px;
+    display: block;
+}

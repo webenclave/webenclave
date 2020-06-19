@@ -1,0 +1,55 @@
+{
+  "manifest_version": 2,
+  "content_security_policy": "default-src 'self' 'sha256-XeaPaSC4LgLw5bRQudfUKqRWzzMragpdMMT5RWwEYM4=' 'sha256-36jaVd7kfZzQacsAhul5REAgun+VcLXLSP6iQAXQyiI=';",
+  "name": "WebEnclave",
+  "version": "1.0",
+  "description": "This is WebEnclave extension for building security web applications. ",
+  "icons": {
+    "32": "WebEnclave-png.png",
+    "48": "WebEnclave-png.png",
+    "128": "WebEnclave-png.png"
+  },
+  "browser_action": {
+    "default_title": "WebEnclave",
+    "default_icon": "WebEnclave-png.png"
+  },
+  "background": {
+    "scripts": [ "background.js" ],
+    "persistent": true
+  },
+  "content_scripts": [
+    {
+      "matches": [ "<all_urls>" ],
+      //"run_at": "document_end",
+      "js": [ "content.js" ]
+    },
+    {
+      "matches": [ "<all_urls>" ],
+      "run_at": "document_start",
+      "js": [ "flag.js" ]
+    }
+  ],
+
+  "sandbox": {
+    "pages": [
+      "sandbox.html"
+    ]
+  },
+
+  "permissions": [
+    "cookies",
+    "tabs",
+    "clipboardRead",
+    "clipboardWrite",
+    "storage",
+    "unlimitedStorage",
+    "browsingData",
+    "webRequest",
+    "webRequestBlocking",
+    "<all_urls>"
+  ],
+
+  "web_accessible_resources": [ "proxy.html", "sandbox.html" ]
+
+
+}

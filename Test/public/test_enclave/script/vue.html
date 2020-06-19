@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+</head>
+<body>
+
+    <web-enclave>
+        <div>
+            <div id="app-6">
+                <p>{{ message }}</p>
+                <input v-model="message" />
+                <br /><br />
+            </div>
+        </div>
+
+        <script src="vue.js"></script>
+
+        <script extend final>
+
+            //only run inside Enclave
+            if (window['$we']) {
+                var app6 = new Vue({
+                    el: '#app-6',
+                    data: {
+                        message: 'Hello Vue!'
+                    }
+                })
+            }
+
+            //only run without Enclave
+            if (!document.documentElement.getAttribute('WebEnclave') && !window['$we']) {
+                var app6 = new Vue({
+                    el: '#app-6',
+                    data: {
+                        message: 'Hello Vue!'
+                    }
+                })
+            }
+
+
+        </script>
+
+    </web-enclave>
+
+
+</body>
+</html>
