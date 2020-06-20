@@ -42,14 +42,13 @@ In the following example, we build a form for users to login a system.
 As shown in the demo, we can see two input elements respectively for collecting username and password, and a button element for clicking to login.
 Also, the inline CSS style decorates the div element.
 
- <img src="./Image/code_dom.svg" width = "300" height = "200" alt="图片名称" align=center />
-![alt code]()
+ <img src="./Image/code_dom.svg" width = "300" height = "200" alt="DOM" align=center />
 
 The above code looks like normal HTML, the only difference is the use of new tag <web-enclave>.
 The basic usage of WebEnclave is to put sensitive HTML elements into the tag.
 By default, the HTML elements within the enclave are dressed up by both the CSS styles inside and outside.
 
-![alt code](https://github.com/webenclave/webenclave/blob/master/Image/code_script.svg)
+ <img src="./Image/code_script.svg" width = "300" height = "200" alt="DOM" align=center />
 
 To add some logic to the login system, we put the script element into the enclave and write Javascript codes inside.
 In the enclave, developers can import third-part libraries to accelerate the development, such as jquery in our example. 
