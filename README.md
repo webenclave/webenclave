@@ -42,7 +42,8 @@ In the following example, we build a form for users to login a system.
 As shown in the demo, we can see two input elements respectively for collecting username and password, and a button element for clicking to login.
 Also, the inline CSS style decorates the div element.
 
-![alt code](https://github.com/webenclave/webenclave/blob/master/Image/code_dom.svg)
+ <img src="./Image/code_dom.svg" width = "300" height = "200" alt="图片名称" align=center />
+![alt code]()
 
 The above code looks like normal HTML, the only difference is the use of new tag <web-enclave>.
 The basic usage of WebEnclave is to put sensitive HTML elements into the tag.
