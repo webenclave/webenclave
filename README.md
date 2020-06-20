@@ -22,7 +22,18 @@ Developers can directly deploy the middleware as a reverse proxy to enable WebEn
 
 ## Build Extension
 
+The extension is published on Google Web Store : 
 
+### Debug
+
+### Release
+
+Use gulp to generate the release versions to the folder: /dist
+
+In addition, you are required to modify the "content_security_policy" in the manifest file of extension. Use the chrome devtools is good option: 
+1. Load unpacked extension with the folder /dist.
+2. Open a test page and see the console of Content Security Policy violation.
+3. Follow the tips to add the checksum.
 
 ## Development: A Basic Example
 
