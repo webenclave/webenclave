@@ -53,21 +53,26 @@ Developers are allowed to write separate codes for browsers that with and withou
 
 
 
-
 Developers can use keywords to enable some useful features provided by WebEnclave.
-%
-The \texttt{final} keyword guarantees that the marked script will be executed after the execution of other scripts.
-%
-Moreover, the \texttt{extend} keyword extends the functionality of the marked script, using our implementation to overwrite some web APIs.
-%
+The final keyword guarantees that the marked script will be executed after the execution of other scripts.
+Moreover, the extend keyword extends the functionality of the marked script, using our implementation to overwrite some web APIs.
 For example, developers can use the following two methods to move back one page:
-\begin{verbatim}
+
     //with extend in <script>
     history.go(-1);
 
     //without extend in <script>
     $we.env.history.go(-1);
-\end{verbatim}
-%
-We can see that with the \texttt{extend}, developers can execute web APIs in the host page by calling corresponding functions in the enclave.
+    
+We can see that with the extend, developers can execute web APIs in the host page by calling corresponding functions in the enclave.
 
+## Deployment
+
+
+To enable our security features, developers are recommended to use our proposed middleware on the server-side.
+The middleware runs like a reverse proxy service that retrieves resources on behalf of a client and automatically adds security support to requests.
+Developers can use the following command to start the middleware:
+
+    node m.js --src=A --port=80 --des=B --out=8080
+
+In the above example, the middleware provides secure web service in server A on port 80, and the original web server is deployed in server B on port 8080.
