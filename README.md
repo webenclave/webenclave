@@ -25,6 +25,7 @@ Developers can directly deploy the middleware as a reverse proxy to enable WebEn
 The extension is published on Google Web Store : 
 
 ### Debug
+Can directly load unpacked extension from the root.
 
 ### Release
 
@@ -37,31 +38,22 @@ In addition, you are required to modify the "content_security_policy" in the man
 
 ## Development: A Basic Example
 
-WebEnclave is a web framework for secure web applications.
-It allows you to use the enclave to isolate sensitive parts to prevent malicious access from browser extensions.
-In this section, we will introduce some development skills and examples to help developers understand our framework.
+In the following example, we build a form for users to login a system.
+As shown in the demo, we can see two input elements respectively for collecting username and password, and a button element for clicking to login.
+Also, the inline CSS style decorates the div element.
 
-
-
-
+![alt code](https://github.com/webenclave/webenclave/blob/master/Image/code_dom.svg)
 
 The above code looks like normal HTML, the only difference is the use of new tag <web-enclave>.
 The basic usage of WebEnclave is to put sensitive HTML elements into the tag.
 By default, the HTML elements within the enclave are dressed up by both the CSS styles inside and outside.
 
-
-
-
+![alt code](https://github.com/webenclave/webenclave/blob/master/Image/code_script.svg)
 
 To add some logic to the login system, we put the script element into the enclave and write Javascript codes inside.
-%
 In the enclave, developers can import third-part libraries to accelerate the development, such as jquery in our example. 
-%
-Figure \ref{fig_code_script} presents a skeleton of common scripts.
-%
+The above code presents a skeleton of common scripts.
 Developers are allowed to write separate codes for browsers that with and without WebEnclave installed.
-
-
 
 
 Developers can use keywords to enable some useful features provided by WebEnclave.
@@ -79,11 +71,16 @@ We can see that with the extend, developers can execute web APIs in the host pag
 
 ## Deployment
 
-
 To enable our security features, developers are recommended to use our proposed middleware on the server-side.
+In this project, the WebEnclaveProxy is the root of the middleware.
 The middleware runs like a reverse proxy service that retrieves resources on behalf of a client and automatically adds security support to requests.
 Developers can use the following command to start the middleware:
 
     node m.js --src=A --port=80 --des=B --out=8080
 
 In the above example, the middleware provides secure web service in server A on port 80, and the original web server is deployed in server B on port 8080.
+
+## Test
+
+We list all the test pages mentioned the our paper in the folder /Test.
+All the evaulation are reproducible.
