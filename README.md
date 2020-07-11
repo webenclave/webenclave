@@ -22,7 +22,7 @@ Developers can directly deploy the middleware as a reverse proxy to enable WebEn
 
 ## Build Extension
 
-The extension is published on Google Web Store : 
+The extension is published on Google Web Store : 【Due to the anonymity strategy of the paper submission, we cannot provide a download address related to a real-name Google account. Please build the extension via the follow steps.】
 
 ### Debug
 Can directly load unpacked extension from the root.
