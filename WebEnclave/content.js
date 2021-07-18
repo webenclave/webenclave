@@ -1,6 +1,7 @@
 $we = {
     tabId: null,
     mapEnclaves: new Map(),
+    msgUUID : uuidv4(),
     postMessage: function (msg) {
         for (let enclave of this.mapEnclaves.values()) {
             enclave.postMessage(msg);
@@ -91,6 +92,14 @@ $we = {
         //History attributes
 
     ]
+}
+
+
+function uuidv4() {
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+      var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+      return v.toString(16);
+    });
 }
 
 
@@ -361,6 +370,7 @@ function main(win) {
         enclaveInfo.msg = { html: fullHTML, id: id, style: nodeStyleTextArr, path: path, origin: origin, cmd: 'Init', width: outerWidth, height: outerHeight };
         enclaveInfo.id = id;
         enclaveInfo.postMessage = function (msg) {
+            msg.uuid = $we.msgUUID;
             this.shadowIframe.contentWindow.postMessage(msg, '*');
         }
 
