@@ -3,12 +3,15 @@ $we = {
     enclaveWindow: null,
     enclaveId: null,
     tabId: null,
+    msgUUID : null,
 
     postMessage: function (msg) {
+        msg.uuid = this.msgUUID;
         return $we.enclaveWindow.postMessage(msg, '*');
     },
 
     sendMessage: function (msg, callBack) {
+        msg.uuid = this.msgUUID;
         chrome.tabs.sendMessage($we.tabId, msg, callBack);
     }
 
@@ -37,13 +40,14 @@ function windowMessageHandler(event) {
 
     console.log(event);
 
-    if (!event.data || !event.data.cmd) {
+    if (!event.data || !event.data.cmd || !event.data.uuid || ($we.msgUUID != null && $we.msgUUID != event.data.uuid)) {
         return;
     }
 
     switch (event.data.cmd) {
         case "Init":
             {
+                $we.msgUUID = event.data.uuid
                 InitSecDom(event);
                 $we.postMessage(event.data);
                 break;

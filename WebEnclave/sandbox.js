@@ -1,6 +1,8 @@
 $we = {
     enclaveId: null,
+    msgUUID: null,
     postMessage: function (msg) {
+        msg.uuid = this.msgUUID;
         parent.postMessage(msg, '*');
     },
     mapDelegateAttr: new Map(),
@@ -408,6 +410,8 @@ function setStyleToElement(ele, cssText, isRoot) {
 }
 
 function Init(event) {
+    //init uuid
+    $we.msgUUID = event.data.uuid;
 
     //init functionality before build others
     initFunctionality(event.data);
