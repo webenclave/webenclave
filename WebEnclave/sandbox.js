@@ -411,7 +411,7 @@ function setStyleToElement(ele, cssText, isRoot) {
 
 function Init(event) {
     //init uuid
-    $we.msgUUID = event.data.msgUUID;
+    $we.msgUUID = event.data.uuid;
 
     //init functionality before build others
     initFunctionality(event.data);
