@@ -40,7 +40,7 @@ function windowMessageHandler(event) {
 
     console.log(event);
 
-    if (!event.data || !event.data.cmd || !event.data.uuid || ($we.msgUUID != null && $we.msgUUID == event.data.uuid)) {
+    if (!event.data || !event.data.cmd || !event.data.uuid || ($we.msgUUID != null && $we.msgUUID != event.data.uuid)) {
         return;
     }
 
